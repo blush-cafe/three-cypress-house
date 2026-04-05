@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Open Graph Tags -->
+    <title>Impressum - Three Cypress House</title>
+    <meta property="og:title" content="Impressum - Three Cypress House">
+    <meta property="og:description" content="Rechtliche Hinweise und Impressum für Three Cypress House.">
+    <meta property="og:image" content="https://blush-cafe.github.io/three-cypress-house/assets/og.png">
+    <meta property="og:url" content="https://blush-cafe.github.io/three-cypress-house/impressum.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Google Fonts: Barlow -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS einbinden -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Konfiguration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        wixblack: '#141414',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-wixblack font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header Bereich -->
+    <header class="w-full flex flex-col items-center pt-12 pb-6">
+        <!-- Logo -->
+        <a href="index.html" class="mb-8">
+            <img src="https://blush-cafe.github.io/three-cypress-house/assets/logo/logo.png" alt="Three Cypress House"
+                class="h-20 object-contain">
+        </a>
+
+        <!-- Navigation -->
+        <nav>
+            <ul class="flex space-x-10 text-[15px] tracking-wide font-light">
+                <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="flex-grow flex flex-col items-center w-full mt-10">
+
+        <!-- Impressum Textbereich -->
+        <div class="max-w-3xl w-full px-6 pb-24 text-left space-y-8 text-[18px] font-light leading-[1.8] text-wixblack">
+
+            <!-- Hauptüberschrift -->
+            <h1 class="font-normal text-[24px] text-center mb-12">Rechtliche Hinweise / Impressum</h1>
+
+            <!-- Abschnitt: Anbieter -->
+            <div>
+                <h2 class="font-normal text-[20px] mb-2">Anbieter / Verantwortlich für Inhalte</h2>
+                <p>Katarzyna Rabska</p>
+                <p>Olbia, Sardinien</p>
+                <p>E-Mail: <a href="mailto:#" class="hover:opacity-50 transition-opacity">#</a></p>
+            </div>
+
+            <!-- Abschnitt: Art des Angebots -->
+            <div>
+                <h2 class="font-normal text-[20px] mb-2">Art des Angebots</h2>
+                <p>Diese Immobilie wird als privates Ferienhaus zur Miete angeboten und ist kein kommerzielles
+                    Unterkunftsunternehmen (z. B. Hotel, Lodge oder Gästehaus).</p>
+                <p>Die Reinigung erfolgt zweimal pro Woche.</p>
+                <p>Es werden keine hotelähnlichen Dienstleistungen wie täglicher Zimmerservice, Rezeption oder Catering
+                    angeboten.</p>
+            </div>
+
+            <!-- Abschnitt: Urheberrecht -->
+            <div>
+                <h2 class="font-normal text-[20px] mb-2">Urheberrecht</h2>
+                <p>Alle Inhalte und Bilder auf dieser Website sind urheberrechtlich geschützt.</p>
+                <p>Jede Verwendung oder Vervielfältigung ohne vorherige schriftliche Zustimmung ist nicht gestattet.</p>
+            </div>
+
+            <!-- Abschnitt: Haftung -->
+            <div>
+                <h2 class="font-normal text-[20px] mb-2">Haftung für Inhalte</h2>
+                <p>Der Inhalt dieser Website wurde mit größter Sorgfalt erstellt.</p>
+                <p>Der Anbieter kann jedoch keine Garantie für Vollständigkeit, Genauigkeit oder Aktualität übernehmen,
+                    und es wird keine Haftung für Fehler oder Auslassungen übernommen.</p>
+            </div>
+
+            <!-- Abschnitt: Datenschutz -->
+            <div>
+                <h2 class="font-normal text-[20px] mb-2">Datenschutz</h2>
+                <p>Personenbezogene Daten werden ausschließlich für Anfragen und Buchungen verwendet.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 text-center text-[13px] font-light tracking-wider">
+        <a href="impressum.html" class="hover:opacity-50 transition-opacity underline underline-offset-4">Rechtliche
+            Hinweise / Impressum</a>
+    </footer>
+
+</body>
+
+</html>

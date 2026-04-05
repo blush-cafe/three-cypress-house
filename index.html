@@ -1,78 +1,164 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Open Graph Tags -->
     <title>Three Cypress House</title>
-    
+    <meta property="og:title" content="Three Cypress House">
+    <meta property="og:description" content="Ein Ort, wo Sie ankommen, atmen Sie ein und bleiben Sie.">
+    <meta property="og:image" content="https://blush-cafe.github.io/three-cypress-house/assets/og.png">
+    <meta property="og:url" content="https://blush-cafe.github.io/three-cypress-house/">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Google Fonts: Barlow -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS einbinden -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
+    <!-- Tailwind Konfiguration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        wixblack: '#141414',
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- Zusätzliche Stile für weiche Übergänge -->
     <style>
-        .slide { transition: opacity 1.5s ease-in-out; }
+        .slide {
+            transition: opacity 1.2s ease-in-out;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Header Bereich -->
-    <header class="w-full flex flex-col items-center pt-12 pb-8">
-        <!-- Logo -->
+<body class="bg-white text-wixblack font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header Bereich (Logo links, Navigation rechts) -->
+    <header class="w-full flex justify-between items-center px-6 md:px-16 pt-10 pb-6">
+        <!-- Logo (Größer) -->
         <a href="index.html">
-            <img src="https://blush-cafe.github.io/three-cypress-house/assets/logo.png" alt="Three Cypress House" class="h-24 object-contain">
+            <img src="https://blush-cafe.github.io/three-cypress-house/assets/logo/logo.png" alt="Three Cypress House"
+                class="h-24 md:h-32 object-contain">
         </a>
-        
+
         <!-- Navigation -->
-        <nav class="mt-10">
-            <ul class="flex space-x-8 text-sm uppercase tracking-widest text-gray-500">
-                <li><a href="index.html" class="hover:text-black transition-colors">Startseite</a></li>
-                <li><a href="impressum.html" class="hover:text-black transition-colors">Impressum</a></li>
+        <nav>
+            <ul class="flex space-x-8 md:space-x-12 text-[15px] tracking-wide font-light">
+                <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hauptinhalt -->
     <main class="flex-grow flex flex-col items-center w-full">
-        
-        <!-- Bild-Slider -->
-        <div class="relative w-full max-w-5xl h-[50vh] md:h-[70vh] overflow-hidden bg-gray-100">
-            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/01.jepg" class="slide absolute inset-0 w-full h-full object-cover opacity-100" alt="Haus Ansicht 1">
-            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/02.jepg" class="slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Haus Ansicht 2">
-            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/03.jepg" class="slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Haus Ansicht 3">
+
+        <!-- Bild-Slider (Volle Breite) -->
+        <div class="relative w-full h-[60vh] md:h-[85vh] overflow-hidden group">
+            <!-- Bilder -->
+            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/01.jpeg"
+                class="slide absolute inset-0 w-full h-full object-cover opacity-100" alt="Haus Ansicht 1">
+            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/02.jpeg"
+                class="slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Haus Ansicht 2">
+            <img src="https://blush-cafe.github.io/three-cypress-house/assets/photos/03.jpeg"
+                class="slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Haus Ansicht 3">
+
+            <!-- Navigation Pfeile (Schwarze Griffe) -->
+            <button onclick="prevSlide()"
+                class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-black hover:scale-110 transition-transform z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-12 h-12 md:w-16 md:h-16 drop-shadow-md">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+
+            <button onclick="nextSlide()"
+                class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-black hover:scale-110 transition-transform z-10">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-12 h-12 md:w-16 md:h-16 drop-shadow-md">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
         </div>
 
         <!-- Textbereich -->
-        <div class="max-w-3xl text-center px-6 py-16 space-y-6 text-lg font-light leading-relaxed text-gray-700">
-            <p class="font-medium text-xl text-gray-900">Ein Ort, wo Sie ankommen, atmen Sie ein und bleiben Sie.</p>
-            <p>Während sich die mächtigen Steine aus Granit und Basalt des Monte Cugnana hinter einem erheben, öffnet sich vom Three Cypress House ein Blick über das weite Meer.</p>
+        <div
+            class="max-w-3xl text-center px-6 pt-20 pb-24 space-y-8 text-[18px] font-light leading-[1.8] text-wixblack">
+            <p class="font-normal text-[22px]">Ein Ort, wo Sie ankommen, atmen Sie ein und bleiben Sie.</p>
+            <p>Während sich die mächtigen Steine aus Granit und Basalt des Monte Cugnana hinter einem erheben, öffnet
+                sich vom Three Cypress House ein Blick über das weite Meer.</p>
             <p>Raum, Stille und Licht bestimmen den Rhythmus. Die Costa Smeralda ist hier etwas ruhiger.</p>
-            <p>Wir möchten Euch dazu einladen, diesen besonderen Ort zu erkunden und genauso dankbar zu sein wie wir selbst.</p>
-            <p class="pt-6 text-gray-900">Kasia, Henry, Paul und Anton</p>
+            <p>Wir möchten Euch dazu einladen, diesen besonderen Ort zu erkunden und genauso dankbar zu sein wie wir
+                selbst.</p>
+            <p class="pt-4">Kasia, Henry, Paul und Anton</p>
         </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="w-full py-10 text-center text-sm text-gray-400">
-        <a href="impressum.html" class="hover:text-gray-800 transition-colors underline decoration-1 underline-offset-4">Rechtliche Hinweise / Impressum</a>
+    <footer class="w-full py-12 text-center text-[13px] font-light tracking-wider">
+        <a href="impressum.html" class="hover:opacity-50 transition-opacity underline underline-offset-4">Rechtliche
+            Hinweise / Impressum</a>
     </footer>
 
-    <!-- Slider Logik -->
+    <!-- Slider Logik mit manueller Steuerung -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        
-        if(slides.length > 1) {
-            setInterval(() => {
-                slides[currentSlide].classList.remove('opacity-100');
-                slides[currentSlide].classList.add('opacity-0');
-                
-                currentSlide = (currentSlide + 1) % slides.length;
-                
-                slides[currentSlide].classList.remove('opacity-0');
-                slides[currentSlide].classList.add('opacity-100');
+        let slideInterval;
+
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('opacity-100');
+            slides[currentSlide].classList.add('opacity-0');
+
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides[currentSlide].classList.remove('opacity-0');
+            slides[currentSlide].classList.add('opacity-100');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            resetInterval();
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            resetInterval();
+        }
+
+        function startInterval() {
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
             }, 4000);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        if (slides.length > 1) {
+            startInterval();
         }
     </script>
 </body>
+
 </html>
