@@ -50,21 +50,48 @@
 
 <body class="bg-white text-wixblack font-sans antialiased flex flex-col min-h-screen">
 
-    <!-- Header Bereich (Logo links, Navigation rechts) -->
-    <header class="w-full flex justify-between items-center px-6 md:px-16 pt-10 pb-6">
-        <!-- Logo (Größer) -->
-        <a href="index.html">
+    <!-- Header Bereich -->
+    <header class="w-full flex justify-between items-center px-6 md:px-16 pt-10 pb-6 relative">
+        <!-- Logo -->
+        <a href="index.html" class="z-50 relative">
             <img src="https://blush-cafe.github.io/three-cypress-house/assets/logo/logo.png" alt="Three Cypress House"
                 class="h-24 md:h-32 object-contain">
         </a>
 
-        <!-- Navigation -->
-        <nav>
-            <ul class="flex space-x-8 md:space-x-12 text-[15px] tracking-wide font-light">
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8 text-[15px] tracking-wide font-light">
                 <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="haus.html" class="hover:opacity-50 transition-opacity">Das Haus</a></li>
+                <li><a href="cugnana.html" class="hover:opacity-50 transition-opacity">Cugnana</a></li>
+                <li><a href="preise.html" class="hover:opacity-50 transition-opacity">Preise</a></li>
+                <li><a href="ueber-uns.html" class="hover:opacity-50 transition-opacity">Über uns</a></li>
+                <li><a href="kontakt.html" class="hover:opacity-50 transition-opacity">Kontakt</a></li>
                 <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
             </ul>
         </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden z-50 relative focus:outline-none text-wixblack">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <ul class="flex flex-col space-y-6 text-center text-xl font-light tracking-wide">
+                <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="haus.html" class="hover:opacity-50 transition-opacity">Das Haus</a></li>
+                <li><a href="cugnana.html" class="hover:opacity-50 transition-opacity">Cugnana</a></li>
+                <li><a href="preise.html" class="hover:opacity-50 transition-opacity">Preise</a></li>
+                <li><a href="ueber-uns.html" class="hover:opacity-50 transition-opacity">Über uns</a></li>
+                <li><a href="kontakt.html" class="hover:opacity-50 transition-opacity">Kontakt</a></li>
+                <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
+            </ul>
+        </div>
     </header>
 
     <!-- Hauptinhalt -->
@@ -102,8 +129,7 @@
         <div
             class="max-w-3xl text-center px-6 pt-20 pb-24 space-y-8 text-[18px] font-light leading-[1.8] text-wixblack">
             <p class="font-normal text-[22px]">Ein Ort, an dem ihr ankommt, einatmet und bleibt.</p>
-            <p>Vom Three Cypress House öffnet sich der Blick weit über das Meer, während sich die mächtigen Steine aus Granit und
-                Basalt des Monte Cugnana hinter einem erheben.</p>
+            <p>Vom Three Cypress House öffnet sich der Blick weit über das Meer, während sich die mächtigen Steine aus Granit und Basalt des Monte Cugnana hinter einem erheben. </p>
             <p>Licht, Raum und Stille geben den Rhythmus an. Hier ist die Costa Smeralda ruhiger.</p>
             <p>Wir laden euch ein, diesen einzigartigen Ort zu entdecken und die gleiche Dankbarkeit zu empfinden wie wir.</p>
             <p class="pt-4">Kasia, Henry, Paul und Anton</p>
@@ -117,8 +143,26 @@
             Hinweise / Impressum</a>
     </footer>
 
-    <!-- Slider Logik mit manueller Steuerung -->
+    <!-- Skripte für Slider und Mobile Menu -->
     <script>
+        // Mobile Menu Logik
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('pointer-events-none');
+            document.body.classList.toggle('overflow-hidden'); // Verhindert Scrollen im Hintergrund
+
+            if (menu.classList.contains('opacity-0')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+            }
+        });
+
+        // Slider Logik
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         let slideInterval;
