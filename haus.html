@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO & Open Graph Tags -->
+    <title>Das Haus - Three Cypress House</title>
+    <meta property="og:title" content="Das Haus - Three Cypress House">
+    <meta property="og:description"
+        content="Ein familiäres Juwel, wo Meer, Berge und Ruhe in erhabener Harmonie existieren.">
+    <meta property="og:image" content="https://three-cypress-house.com/assets/og.png">
+    <meta property="og:url" content="https://three-cypress-house.com/haus.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Google Fonts: Barlow -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS einbinden -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Konfiguration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Barlow', 'sans-serif'],
+                    },
+                    colors: {
+                        wixblack: '#141414',
+                        brandbg: '#F1F4F1', /* Hintergrundfarbe für den Ausstattungsbereich */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white text-wixblack font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header Bereich -->
+    <header class="w-full flex justify-between items-center px-6 md:px-16 pt-10 pb-6 relative">
+        <!-- Logo -->
+        <a href="index.html" class="z-50 relative">
+            <img src="https://three-cypress-house.com/assets/logo/logo.png" alt="Three Cypress House"
+                class="h-24 md:h-32 object-contain">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8 text-[15px] tracking-wide font-light">
+                <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="haus.html" class="hover:opacity-50 transition-opacity">Das Haus</a></li>
+                <li><a href="cugnana.html" class="hover:opacity-50 transition-opacity">Cugnana</a></li>
+                <li><a href="preise.html" class="hover:opacity-50 transition-opacity">Preise</a></li>
+                <li><a href="ueber-uns.html" class="hover:opacity-50 transition-opacity">Über uns</a></li>
+                <li><a href="kontakt.html" class="hover:opacity-50 transition-opacity">Kontakt</a></li>
+                <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
+            </ul>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-menu-btn" class="md:hidden z-50 relative focus:outline-none text-wixblack">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+            <ul class="flex flex-col space-y-6 text-center text-xl font-light tracking-wide">
+                <li><a href="index.html" class="hover:opacity-50 transition-opacity">Startseite</a></li>
+                <li><a href="haus.html" class="hover:opacity-50 transition-opacity">Das Haus</a></li>
+                <li><a href="cugnana.html" class="hover:opacity-50 transition-opacity">Cugnana</a></li>
+                <li><a href="preise.html" class="hover:opacity-50 transition-opacity">Preise</a></li>
+                <li><a href="ueber-uns.html" class="hover:opacity-50 transition-opacity">Über uns</a></li>
+                <li><a href="kontakt.html" class="hover:opacity-50 transition-opacity">Kontakt</a></li>
+                <li><a href="impressum.html" class="hover:opacity-50 transition-opacity">Impressum</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hauptinhalt -->
+    <main class="flex-grow flex flex-col items-center w-full mt-10">
+
+        <!-- Hauptüberschrift & Einleitungstext -->
+        <div
+            class="max-w-4xl w-full px-6 pb-16 space-y-6 text-[18px] font-light leading-[1.8] text-wixblack mx-auto text-center">
+            <h1 class="font-normal text-[28px] mb-8">Das Haus</h1>
+            <p>Three Cypress House ist kein gewöhnliches Ferienhaus.</p>
+            <p>Es ist ein familiäres Juwel für diejenigen, die etwas persönliches suchen und Wert auf Komfort,
+                Geborgenheit und Architektur legen, welche im lokalen Erbe verwurzelt sind. Ein seltener Ort, an dem
+                Meer, Berge und Ruhe in erhabener Harmonie existieren.</p>
+        </div>
+
+        <!-- Zickzack-Bereich (Bilder & Texte) -->
+        <div class="w-full max-w-7xl mx-auto px-6 flex flex-col gap-20 md:gap-32 pb-24">
+
+            <!-- Abschnitt 1: Wohnbereich (Text Links, Bild Rechts) -->
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="w-full md:w-1/2 space-y-6 text-[18px] font-light leading-[1.8]">
+                    <h2 class="font-normal text-[22px]">Wohnbereich und Küche</h2>
+                    <p>Der geräumige Wohnbereich mit einem gemütlichen Kamin öffnet sich von zwei Seiten mit großen
+                        komplett aufzuklappenden Glastüren. Die angrenzende große moderne Küche, mit einem alten
+                        Eichenesstisch, bildet das Herzstück des Wohn- und Essbereiches.</p>
+                    <p>Vor beiden Räumen befinden sich große überdachte Terrassen mit anschließender Wiese und einem
+                        atemberaubendem Blick in das grüne von Olivenbäumen geprägte Tal und einem fantastischen
+                        Meerblick.</p>
+                </div>
+                <!-- Dynamischer Slider: data-folder gibt den Pfad an, data-ext das Format (z.B. jpeg) -->
+                <div class="w-full md:w-1/2 relative aspect-[4/3] bg-white overflow-hidden group slider-container"
+                    data-folder="https://three-cypress-house.com/assets/photos/wohnbereich_und_kueche" data-ext="jpeg">
+
+                    <div class="image-wrapper absolute inset-0 w-full h-full"></div>
+
+                    <button
+                        class="prev absolute left-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button
+                        class="next absolute right-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    <div class="counter absolute bottom-4 left-0 right-0 mx-auto w-max hidden">
+                        <!-- Blurry Background -->
+                        <div class="absolute inset-0 bg-white/25 backdrop-blur-sm rounded-full shadow-sm"></div>
+                        <!-- Dynamischer Text (Weiß/Schwarz basierend auf dem Bild) -->
+                        <div class="relative px-4 py-1 mix-blend-difference text-white text-sm font-medium counter-text"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abschnitt 2: Schlafzimmer (Bild Links, Text Rechts) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16">
+                <div class="w-full md:w-1/2 space-y-6 text-[18px] font-light leading-[1.8]">
+                    <h2 class="font-normal text-[22px]">Schlafzimmer und Badezimmer</h2>
+                    <p>Das Haus verfügt über drei gemütliche Schlafzimmer alle mit eigenem Badezimmer und eigener
+                        Terrasse. Alle Betten sind Kingsize-Bett und das Hauptschlafzimmer verfügt über eine
+                        freistehende Badewanne. Es gibt ausreichend Stauraum für Kleidung.</p>
+                </div>
+                <div class="w-full md:w-1/2 relative aspect-[4/3] bg-white overflow-hidden group slider-container"
+                    data-folder="https://three-cypress-house.com/assets/photos/schlafzimmer_und_badezimmer"
+                    data-ext="jpeg">
+
+                    <div class="image-wrapper absolute inset-0 w-full h-full"></div>
+
+                    <button
+                        class="prev absolute left-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button
+                        class="next absolute right-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    <div class="counter absolute bottom-4 left-0 right-0 mx-auto w-max hidden">
+                        <!-- Blurry Background -->
+                        <div class="absolute inset-0 bg-white/25 backdrop-blur-sm rounded-full shadow-sm"></div>
+                        <!-- Dynamischer Text (Weiß/Schwarz basierend auf dem Bild) -->
+                        <div class="relative px-4 py-1 mix-blend-difference text-white text-sm font-medium counter-text"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abschnitt 3: Terrassen (Text Links, Bild Rechts) -->
+            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                <div class="w-full md:w-1/2 space-y-6 text-[18px] font-light leading-[1.8]">
+                    <h2 class="font-normal text-[22px]">Terrassen und Pool</h2>
+                    <p>Die mehreren weitläufigen Terrassen rund ums Haus sind entsprechend den Tageszeiten nutzbar. Der
+                        Pool spiegelt das Licht, Essbereiche im Freien für gemächliche Mahlzeiten,
+                        Lounge-Sitzgelegenheiten unter Sonnenschirmen.</p>
+                    <p>Vor dir entfaltet sich die Natur offen und unendlich.</p>
+                </div>
+                <div class="w-full md:w-1/2 relative aspect-[4/3] bg-white overflow-hidden group slider-container"
+                    data-folder="https://three-cypress-house.com/assets/photos/terrassen_und_pool" data-ext="jpeg">
+
+                    <div class="image-wrapper absolute inset-0 w-full h-full"></div>
+
+                    <button
+                        class="prev absolute left-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button
+                        class="next absolute right-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    <div class="counter absolute bottom-4 left-0 right-0 mx-auto w-max hidden">
+                        <!-- Blurry Background -->
+                        <div class="absolute inset-0 bg-white/25 backdrop-blur-sm rounded-full shadow-sm"></div>
+                        <!-- Dynamischer Text (Weiß/Schwarz basierend auf dem Bild) -->
+                        <div class="relative px-4 py-1 mix-blend-difference text-white text-sm font-medium counter-text"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abschnitt 4: Garten (Bild Links, Text Rechts) -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-10 md:gap-16">
+                <div class="w-full md:w-1/2 space-y-6 text-[18px] font-light leading-[1.8]">
+                    <h2 class="font-normal text-[22px]">Garten- und Außenbereiche</h2>
+                    <p>Der Garten birgt Geheimnisse: ruhige Ecken im Schatten, abgelegene Stellen inmitten der
+                        einheimischen Flora, wo sich die Zeit auflöst. Dies sind Orte für eine Siesta, zum Lesen, um den
+                        Nachmittag vergehen zu lassen, ohne die Stunden zu zählen.</p>
+                    <p>Die Zikaden zirpen und es riecht nach einer Mischung aus salziger Meeresbrise und aromatischer
+                        Macchia-Vegetation (Myrte, Wacholder, Rosmarin).</p>
+                </div>
+                <div class="w-full md:w-1/2 relative aspect-[4/3] bg-white overflow-hidden group slider-container"
+                    data-folder="https://three-cypress-house.com/assets/photos/garten_und_aussenbereiche"
+                    data-ext="jpeg">
+
+                    <div class="image-wrapper absolute inset-0 w-full h-full"></div>
+
+                    <button
+                        class="prev absolute left-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button
+                        class="next absolute right-4 top-1/2 -translate-y-1/2 text-white drop-shadow-lg hover:scale-110 transition-transform z-10 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                    <div class="counter absolute bottom-4 left-0 right-0 mx-auto w-max hidden">
+                        <!-- Blurry Background -->
+                        <div class="absolute inset-0 bg-white/25 backdrop-blur-sm rounded-full shadow-sm"></div>
+                        <!-- Dynamischer Text (Weiß/Schwarz basierend auf dem Bild) -->
+                        <div class="relative px-4 py-1 mix-blend-difference text-white text-sm font-medium counter-text"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Ausstattungsbereich (Hintergrund #F1F4F1) -->
+        <div class="w-full bg-brandbg py-20 px-6 md:px-16">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-normal text-[28px] text-center mb-16">Was das Three Cypress House bietet</h2>
+
+                <!-- Grid: 1 Spalte Mobile, 3 Spalten Desktop -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-[16px] font-light leading-[1.8]">
+
+                    <!-- Spalte 1: Immobilienübersicht -->
+                    <div>
+                        <h3 class="font-normal text-[20px] mb-6 border-b border-gray-300 pb-2">Immobilienübersicht</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z">
+                                    </path>
+                                </svg>
+                                Gäste: 6
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                    </path>
+                                </svg>
+                                Schlafzimmer: 3
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <!-- Neues Bett-Icon -->
+                                <svg class="w-5 h-5 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 4v16"></path>
+                                    <path d="M2 8h18a2 2 0 0 1 2 2v10"></path>
+                                    <path d="M2 17h20"></path>
+                                    <path d="M6 8v9"></path>
+                                </svg>
+                                Betten: 3
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <!-- Neues Dusch-Icon -->
+                                <svg class="w-5 h-5 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m4 4 2.5 2.5"></path>
+                                    <path d="M13.5 6.5a4.95 4.95 0 0 0-7 7"></path>
+                                    <path d="M15 5 5 15"></path>
+                                    <path d="M14 17v.01"></path>
+                                    <path d="M10 16v.01"></path>
+                                    <path d="M13 13v.01"></path>
+                                    <path d="M16 10v.01"></path>
+                                    <path d="M11 20v.01"></path>
+                                    <path d="M17 14v.01"></path>
+                                    <path d="M20 11v.01"></path>
+                                </svg>
+                                Badezimmer: 3,5
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Spalte 2: Hauptmerkmale -->
+                    <div>
+                        <h3 class="font-normal text-[20px] mb-6 border-b border-gray-300 pb-2">Hauptmerkmale</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Schwimmbad</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Voll ausgestattete Küche</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Essbereiche im Innen- und
+                                Außenbereich</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Privater Garten mit Weinreben
+                                und Zitronenbäumen</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Sonnenliegen und
+                                Sitzgelegenheiten im Freien</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Holzkamin</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> WLAN</li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Privater gesicherter Eingang
+                            </li>
+                            <li class="flex items-center gap-3"><span
+                                    class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Parkplätze</li>
+                        </ul>
+                    </div>
+
+                    <!-- Spalte 3: Schlafzimmer & Unterhaltung -->
+                    <div class="space-y-10">
+                        <div>
+                            <h3 class="font-normal text-[20px] mb-6 border-b border-gray-300 pb-2">Schlafzimmer &
+                                Bettwäsche</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Zusätzliche Kissen und
+                                    Decken</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Verdunkelungsvorhänge</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Abschließbare Fensterläden
+                                </li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Garderoben- und
+                                    Kleideraufbewahrung</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> 3 komplette Badezimmer + 1
+                                    halbes Badezimmer</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Badewanne + Duschen</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Außendusche</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Essentials: Handtücher,
+                                    Seife, Toilettenpapier</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-normal text-[20px] mb-6 border-b border-gray-300 pb-2">Unterhaltung und
+                                Komfort</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> TV und Soundsystem</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Waschmaschine + Trockner
+                                </li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Geschirrspüler</li>
+                                <li class="flex items-center gap-3"><span
+                                        class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span> Kaffeemaschine (Jura) und
+                                    Küchengeräte</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 text-center text-[13px] font-light tracking-wider">
+        <a href="impressum.html" class="hover:opacity-50 transition-opacity underline underline-offset-4">Rechtliche
+            Hinweise / Impressum</a>
+    </footer>
+
+    <!-- Skripte -->
+    <script>
+        // Mobile Menu Logik
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('pointer-events-none');
+            document.body.classList.toggle('overflow-hidden');
+
+            if (menu.classList.contains('opacity-0')) {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />';
+            } else {
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />';
+            }
+        });
+
+        // Dynamische Multi-Slider Logik (Liest Bilder automatisch aus dem Ordner)
+        document.querySelectorAll('.slider-container').forEach(container => {
+            const folder = container.getAttribute('data-folder');
+            const ext = container.getAttribute('data-ext') || 'jpeg'; // Standard ist jpeg
+            const wrapper = container.querySelector('.image-wrapper');
+            const prevBtn = container.querySelector('.prev');
+            const nextBtn = container.querySelector('.next');
+            const counter = container.querySelector('.counter');
+
+            let images = [];
+            let currentSlide = 0;
+            let slideInterval;
+            let checkIndex = 1;
+
+            // Funktion zum sequenziellen Laden der Bilder (01.jpeg, 02.jpeg, ...)
+            function checkNextImage() {
+                // Formatierung der Zahl (z.B. 1 -> "01")
+                const imgNum = checkIndex < 10 ? '0' + checkIndex : checkIndex;
+                const src = `${folder}/${imgNum}.${ext}`;
+
+                const img = new Image();
+
+                // Wenn das Bild erfolgreich geladen wurde
+                img.onload = function () {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = src;
+                    // Das erste Bild ist sichtbar (opacity-100), die restlichen unsichtbar (opacity-0)
+                    imgElement.className = `slide absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ${images.length === 0 ? 'opacity-100' : 'opacity-0'}`;
+                    imgElement.alt = `Ansicht ${checkIndex}`;
+
+                    wrapper.appendChild(imgElement);
+                    images.push(imgElement);
+
+                    // UI-Elemente (Pfeile, Zähler) anzeigen, sobald mehr als 1 Bild da ist
+                    if (images.length > 1) {
+                        prevBtn.classList.remove('hidden');
+                        nextBtn.classList.remove('hidden');
+                        counter.classList.remove('hidden');
+                        updateCounter();
+
+                        // Starte den automatischen Wechsel erst, wenn das 2. Bild geladen ist
+                        if (images.length === 2) {
+                            startInterval();
+                        }
+                    } else if (images.length === 1) {
+                        // Zähler für das erste Bild aktualisieren (falls es nur 1 Bild gibt)
+                        updateCounter();
+                    }
+
+                    // Nächstes Bild prüfen
+                    checkIndex++;
+                    checkNextImage();
+                };
+
+                // Wenn das Bild nicht existiert (404 Error) -> Ende des Ordners erreicht
+                img.onerror = function () {
+                    if (images.length === 0) {
+                        // Fallback, falls gar kein Bild gefunden wurde
+                        wrapper.innerHTML = '<div class="w-full h-full flex items-center justify-center bg-gray-50 text-gray-400 text-sm">Bilder werden geladen oder nicht gefunden...</div>';
+                    }
+                };
+
+                // Ladevorgang starten
+                img.src = src;
+            }
+
+            // Slider aktualisieren
+            function updateSlider() {
+                images.forEach((img, index) => {
+                    img.classList.remove('opacity-100');
+                    img.classList.add('opacity-0');
+                    if (index === currentSlide) {
+                        img.classList.remove('opacity-0');
+                        img.classList.add('opacity-100');
+                    }
+                });
+                updateCounter();
+            }
+
+            // Zähler aktualisieren
+            function updateCounter() {
+                const counterText = container.querySelector('.counter-text');
+                if (counter && counterText && images.length > 0) {
+                    counterText.textContent = `${currentSlide + 1} / ${images.length}`;
+                }
+            }
+
+            // Nächstes Bild
+            function nextSlide() {
+                if (images.length <= 1) return;
+                currentSlide = (currentSlide + 1) % images.length;
+                updateSlider();
+                resetInterval();
+            }
+
+            // Vorheriges Bild
+            function prevSlide() {
+                if (images.length <= 1) return;
+                currentSlide = (currentSlide - 1 + images.length) % images.length;
+                updateSlider();
+                resetInterval();
+            }
+
+            // Automatischer Wechsel (alle 4 Sekunden)
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 4000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            // Event-Listener für Pfeile
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+            // Start des Ladevorgangs
+            checkNextImage();
+        });
+    </script>
+</body>
+
+</html>
