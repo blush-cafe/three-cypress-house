@@ -1,5 +1,3 @@
+# Alle Suchmaschinen vom Scannen der Website ausschließen
 User-agent: *
-Allow: /
-Disallow: /404.html
-
-Sitemap: https://three-cypress-house.com/sitemap.xml
+Disallow: /
